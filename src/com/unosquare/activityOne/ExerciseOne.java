@@ -2,6 +2,14 @@ package com.unosquare.activityOne;
 
 import java.util.ArrayList;
 
+/**
+ * Module: Java Basic
+ * Activity: Java conventions practice
+ * URL: https://courses.unosquare.com/moodle/mod/assign/view.php?id=1370
+ * @author carlos.acevedo
+ *
+ */
+
 public class ExerciseOne {
 	
 	/**

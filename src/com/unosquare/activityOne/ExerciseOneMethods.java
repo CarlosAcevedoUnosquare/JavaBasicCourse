@@ -22,7 +22,7 @@ public class ExerciseOneMethods {
      * @param value
      * @return list of numbers.
      */
-    public static ArrayList<Integer> generatedNumbers(Integer value){
+    public static ArrayList<Integer> generateNumbers(Integer value){
     	
         ArrayList<Integer> list = new ArrayList<>();
         Integer i=1;

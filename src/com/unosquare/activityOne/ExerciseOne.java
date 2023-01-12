@@ -31,7 +31,7 @@ public class ExerciseOne {
      * @param value
      * @return list of numbers.
      */
-    public static ArrayList<Integer> generatedNumbers(Integer value){
+    public static ArrayList<Integer> generateNumbers(Integer value){
     	
         ArrayList<Integer> list = new ArrayList<>();
         Integer i=1;
@@ -49,7 +49,7 @@ public class ExerciseOne {
 	ExerciseOneMethods methods = new ExerciseOneMethods();
 	int amountOfNumbers = 50;
 	
-    for (Integer i : methods.generatedNumbers(amountOfNumbers)) {
+    for (Integer i : methods.generateNumbers(amountOfNumbers)) {
         System.out.print(i);
        if(methods.canBeDividedBy3(i)) {
           System.out.print("-> Can be divided by 3.");
@@ -68,7 +68,7 @@ public class ExerciseOne {
 		
 		int amountOfNumbers = 30;
 		
-	    for (Integer i : generatedNumbers(amountOfNumbers)) {
+	    for (Integer i : generateNumbers(amountOfNumbers)) {
 	        System.out.print(i);
 	       if(canBeDividedBy3(i)) {
 	          System.out.print("-> Can be divided by 3.");

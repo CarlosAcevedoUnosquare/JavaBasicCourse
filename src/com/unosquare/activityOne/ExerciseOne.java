@@ -71,7 +71,7 @@ public class ExerciseOne {
 	    for (Integer i : generateNumbers(amountOfNumbers)) {
 	        System.out.print(i);
 	       if(canBeDividedBy3(i)) {
-	          System.out.print("-> Can be divided by 3.");
+	          System.out.print("-> Can be divided by 3. Carlos Acevedo.");
 	      }
 	      System.out.println();
 	  }

@@ -60,5 +60,45 @@ public class ShoppingList {
 				System.out.println("Catching here");
 			}
 		}
+	
+	int quantity;
+	@SuppressWarnings("unused")
+	public void deleteItem(String item) {
+		quantity = 0;
+		// Exception 1 -> product does not exist in the hash
+		// Exception 2 -> Empty string received = String must not be empty (this can be an if)
+		// Exception 3 -> Receiving a 'null' should throw exception
+		// Final -> print the amount of removed products
+		try {
+			
+			if(item == null) 
+				throw new NullPointerException("Item can't be null");
+			
+			if(item.toUpperCase().isEmpty() || item.toUpperCase().isBlank()) 
+				throw new NullPointerException("Item can't be blank");
+
+			item = item.toUpperCase();
+			
+			System.out.println("Attempting to remove: " + item.toUpperCase());
+			System.out.println("Before: ["+item.toUpperCase()+"] -> " + shoppingList.get(item.toUpperCase()));
+			
+			quantity = shoppingList.remove(item.toUpperCase());
+			shoppingList.remove(item);
+			
+			System.out.println("After: ["+item.toUpperCase()+"] -> " + shoppingList.get(item.toUpperCase()));
+			
+			printWholeHash();
+			
+		}catch(NullPointerException e) {
+			System.out.print("Catched NullPointerException: " + e + "\n");
+		}
+		catch(Exception e) {
+			System.out.println("By any reason something went wrong with exception: " + e + "\n");
+		}finally {
+			System.out.println("Amount of items removed: [" + quantity + "]");
+		}
+	}
+	
+	
 	}
 

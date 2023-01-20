@@ -22,7 +22,6 @@ public class ShoppingListMain {
     sl.addItem("Shampoo",15); // total -> 26
     sl.print("Shampoo");
     
-    
     sl.addItem("Soap",2); // total -> 2
     sl.print("Soap");
     sl.addItem("Soap",20); // total -> 22

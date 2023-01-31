@@ -2,13 +2,12 @@ package org.unosquare.shopping;
 
 import java.util.HashMap;
 
-public class ShoppingList {
+public class ShoppingListDouble {
 
-	
-	public ShoppingList() {
+	public ShoppingListDouble() {
 		
 	}
-	public HashMap<String, Integer> shoppingList = new HashMap<>();
+	public HashMap<String, Double> shoppingList = new HashMap<>();
 	
 	//Store the product name in CAPS (toUpperCase)
 	//Can't repeat products
@@ -20,7 +19,7 @@ public class ShoppingList {
 	 * @param itemHere
 	 * @param quantity
 	 */
-	public void addItem(String itemHere, int quantity) {
+	public void addItem(String itemHere, double quantity) {
 		String item = itemHere.toUpperCase();
 		if(item != null) {
 			System.out.println("Adding item {"+item+"} to the hasmap");
@@ -61,7 +60,7 @@ public class ShoppingList {
 			}
 		}
 	
-	int quantity;
+	double quantity;
 	@SuppressWarnings("unused")
 	public void deleteItem(String item) {
 		quantity = 0;
@@ -99,20 +98,4 @@ public class ShoppingList {
 		}
 	}
 	
-	public boolean verifyItem(String itemHere) {
-		boolean existance = false;
-		String item = itemHere.toUpperCase();
-		if(item != null && item != "") {
-			if(shoppingList.get(item) != null) {
-				System.out.println("Item {"+item+"} is present in hasmap");
-				existance = true;
-			}else {
-				System.out.println("Item is not present in the HashMap, item won't be added.");
-			}
-	}
-		return existance;
-	}
-	
-	
 }
-

@@ -113,6 +113,10 @@ public class ShoppingList {
 		return existance;
 	}
 	
+	public HashMap<String, Integer> fillList() {
+		System.out.println(shoppingList.toString());
+		return this.shoppingList;
+	}
 	
 }
 

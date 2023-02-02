@@ -65,6 +65,44 @@ public class ShoppingCart {
 		}
 	}
 	
+	
+	public void returnProduct(String item) {
+		// Exception 1 -> product does not exist in the hash
+		// Exception 2 -> Empty string received = String must not be empty (this can be an if)
+		// Exception 3 -> Receiving a 'null' should throw exception
+		// Final -> print the amount of removed products
+		try {
+			
+			if(item == null) 
+				throw new NullPointerException("Item can't be null");
+			
+			if(item.toUpperCase().isEmpty() || item.toUpperCase().isBlank()) 
+				throw new NullPointerException("Item can't be blank");
+
+			item = item.toUpperCase();
+			if(shoppingCart.get(item) == null) {
+				throw new NullPointerException("Item is not present on the hash.");
+			}
+			
+			System.out.println("Attempting to remove: " + item.toUpperCase());
+			double price = shoppingCart.get(item);
+			int ocurrences = Collections.frequency(prices, price);
+//			if(ocurrences >= 1) {
+				prices.removeAll(Collections.singleton(price));
+				shoppingCart.remove(item);
+//			}
+			
+		}catch(NullPointerException e) {
+			System.out.print("Catched NullPointerException: " + e + "\n");
+		}
+		catch(Exception e) {
+			System.out.println("By any reason something went wrong with exception: " + e + "\n");
+		}finally {
+			System.out.println("End of remove process.");
+			printWholeHash();
+		}
+	}
+	
 	public void deleteItem(String item) {
 		// Exception 1 -> product does not exist in the hash
 		// Exception 2 -> Empty string received = String must not be empty (this can be an if)
@@ -163,6 +201,12 @@ public class ShoppingCart {
 		System.out.println("Taxes: $" + taxes);
 		System.out.println("TOTAL: $" + total);
 		System.out.println("=========================================================");
+	}
+	
+	public void fillShoppingCartList() {
+		HashMap<String, Integer> shopp = new HashMap<>();
+		shopp = shoppingList.fillList();
+		System.out.println(shopp);
 	}
 	
 	public static void main(String args[]){
